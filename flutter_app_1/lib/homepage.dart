@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
           BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
-      
+
       // Appbar Atas
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -38,144 +38,152 @@ class HomePage extends StatelessWidget {
           IconButton(icon: Icon(Icons.search), onPressed: () {}),
         ],
       ),
+
+      // Body
       body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Carousel Slider
-                CarouselSlider(
-                  options: CarouselOptions(
-                    height: 150.0,
-                    enableInfiniteScroll: true,
-                    enlargeCenterPage: true,
-                    autoPlay: true,
-                  ),
-                  items:
-                      [
-                        'assets/images/1.png',
-                        'assets/images/2.png',
-                        'assets/images/4.png',
-                      ].map((i) {
-                        return ClipRRect(
-                          borderRadius: BorderRadius.circular(16),
-                          child: SizedBox(
-                            width: double.infinity,
-                            height: 200,
-                            child: Image.asset(
-                              i,
-                              fit: BoxFit.cover,
-                              width: double.infinity,
-                            ),
-                          ),
-                        );
-                      }).toList(),
-                ),
+        child: Column(
+          children: [
+            // Carousel Slider
+            SizedBox(height: 16),
+            CarouselSlider(
+              options: CarouselOptions(
+                height: 150.0,
+                enableInfiniteScroll: true,
+                enlargeCenterPage: true,
+                autoPlay: true,
+              ),
+              items:
+                  [
+                    'assets/images/1.png',
+                    'assets/images/2.png',
+                    'assets/images/4.png',
+                  ].map((i) {
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: SizedBox(
+                        width: double.infinity,
+                        height: 200,
+                        child: Image.asset(
+                          i,
+                          fit: BoxFit.cover,
+                          width: double.infinity,
+                        ),
+                      ),
+                    );
+                  }).toList(),
+            ),
 
-                SizedBox(height: 24),
-                // Search Bar
-                Container(
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(25, 158, 158, 158),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 12,
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(Icons.search, color: Colors.grey[600]),
-                      SizedBox(width: 8),
-                      Text('Search Here...'),
-                    ],
-                  ),
-                ),
-
-                SizedBox(height: 24),
-                // Judul Card List
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Destinasi Populer",
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: "PlusJakartaSans",
+                    // Search Bar
+                    Container(
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(25, 158, 158, 158),
+                        borderRadius: BorderRadius.circular(16),
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 12,
+                      ),
+                      child: Row(
+                        children: [
+                          Icon(Icons.search, color: Colors.grey[600]),
+                          SizedBox(width: 8),
+                          Text('Search Here...'),
+                        ],
                       ),
                     ),
-                    Icon(Icons.more_horiz, color: Colors.grey[600]),
-                  ],
-                ),
 
-                SizedBox(height: 8),
-                // Card List
-                Card.outlined(
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(24),
-                    side: BorderSide(
-                      color: const Color.fromARGB(55, 158, 158, 158),
-                      width: 1,
-                    ),
-                  ),
-                  child: SizedBox(
-                    width: double.infinity,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    SizedBox(height: 24),
+                    // Judul Card List
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(16)),
-                            child: Image.asset(
-                              "assets/images/3.png",
-                              fit: BoxFit.cover,
-                              width: double.infinity,
-                              height: 150,
-                            ),
+                        Text(
+                          "Destinasi Populer",
+                          style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: "PlusJakartaSans",
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 16.0,
-                            right: 16.0,
-                            bottom: 16.0,
-                            top: 4.0,
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Identitas Budaya Sunda",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  fontFamily: "PlusJakartaSans",
-                                ),
-                              ),
-                              SizedBox(height: 4),
-                              Text(
-                                "Bandung, Jawa Barat",
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.grey[600],
-                                  fontFamily: "PlusJakartaSans",
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
+                        Icon(Icons.more_horiz, color: Colors.grey[600]),
                       ],
                     ),
-                  ),
+
+                    SizedBox(height: 8),
+                    // Card List
+                    Card.outlined(
+                      elevation: 0,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24),
+                        side: BorderSide(
+                          color: const Color.fromARGB(55, 158, 158, 158),
+                          width: 1,
+                        ),
+                      ),
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(16),
+                                ),
+                                child: Image.asset(
+                                  "assets/images/3.png",
+                                  fit: BoxFit.cover,
+                                  width: double.infinity,
+                                  height: 150,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 16.0,
+                                right: 16.0,
+                                bottom: 16.0,
+                                top: 4.0,
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "Identitas Budaya Sunda",
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: "PlusJakartaSans",
+                                    ),
+                                  ),
+                                  SizedBox(height: 4),
+                                  Text(
+                                    "Bandung, Jawa Barat",
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.grey[600],
+                                      fontFamily: "PlusJakartaSans",
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
