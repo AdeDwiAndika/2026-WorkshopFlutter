@@ -7,6 +7,25 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Navbar Bawah
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        selectedFontSize: 12,
+        unselectedFontSize: 12,
+        selectedItemColor: const Color.fromARGB(255, 111, 50, 28),
+        unselectedItemColor: Colors.grey[600],
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Explore"),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.favorite),
+            label: "Favorite",
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+        ],
+      ),
+      
+      // Appbar Atas
       appBar: AppBar(
         backgroundColor: Colors.white,
         iconTheme: IconThemeData(color: Colors.black),
@@ -16,10 +35,7 @@ class HomePage extends StatelessWidget {
             icon: Icon(Icons.notifications_none_outlined),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.search), 
-            onPressed: () {}
-          ),
+          IconButton(icon: Icon(Icons.search), onPressed: () {}),
         ],
       ),
       body: SafeArea(
@@ -29,47 +45,82 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // Carousel Slider
                 CarouselSlider(
                   options: CarouselOptions(
                     height: 150.0,
                     enableInfiniteScroll: true,
                     enlargeCenterPage: true,
-                    autoPlay: false,
+                    autoPlay: true,
                   ),
-                  items: [
-                    'assets/images/1.png',
-                    'assets/images/2.png',
-                    'assets/images/4.png',
-                  ].map((i) {
-                    return ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 200,
-                        child: Image.asset(i, fit: BoxFit.cover, width: double.infinity)
-                      ),
-                    );
-                  }).toList(),
+                  items:
+                      [
+                        'assets/images/1.png',
+                        'assets/images/2.png',
+                        'assets/images/4.png',
+                      ].map((i) {
+                        return ClipRRect(
+                          borderRadius: BorderRadius.circular(16),
+                          child: SizedBox(
+                            width: double.infinity,
+                            height: 200,
+                            child: Image.asset(
+                              i,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
+                          ),
+                        );
+                      }).toList(),
                 ),
+
                 SizedBox(height: 24),
-                Text(
-                  "Destinasi Populer",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: "PlusJakartaSans"
+                // Search Bar
+                Container(
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(25, 158, 158, 158),
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 12,
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.search, color: Colors.grey[600]),
+                      SizedBox(width: 8),
+                      Text('Search Here...'),
+                    ],
                   ),
                 ),
-                SizedBox(height: 16,),
+
+                SizedBox(height: 24),
+                // Judul Card List
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Destinasi Populer",
+                      style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: "PlusJakartaSans",
+                      ),
+                    ),
+                    Icon(Icons.more_horiz, color: Colors.grey[600]),
+                  ],
+                ),
+
+                SizedBox(height: 8),
+                // Card List
                 Card.outlined(
-                  elevation: 4,
-                  shadowColor: const Color.fromARGB(50, 238, 238, 238),
+                  elevation: 0,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(16),
+                    borderRadius: BorderRadius.circular(24),
                     side: BorderSide(
-                      color: const Color.fromARGB(184, 208, 208, 208),
-                      width: 1
-                    )
+                      color: const Color.fromARGB(55, 158, 158, 158),
+                      width: 1,
+                    ),
                   ),
                   child: SizedBox(
                     width: double.infinity,
@@ -79,39 +130,49 @@ class HomePage extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.all(Radius.circular(8)),
-                            child: Image.asset("assets/images/3.png", fit: BoxFit.cover, width: double.infinity, height: 150),
-                          )
+                            borderRadius: BorderRadius.all(Radius.circular(16)),
+                            child: Image.asset(
+                              "assets/images/3.png",
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                              height: 150,
+                            ),
+                          ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 16.0, top: 4.0),
+                          padding: const EdgeInsets.only(
+                            left: 16.0,
+                            right: 16.0,
+                            bottom: 16.0,
+                            top: 4.0,
+                          ),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "Identitas Budaya Sunda",
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: "PlusJakartaSans"
+                                  fontFamily: "PlusJakartaSans",
                                 ),
                               ),
                               SizedBox(height: 4),
                               Text(
                                 "Bandung, Jawa Barat",
                                 style: TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 12,
                                   color: Colors.grey[600],
-                                  fontFamily: "PlusJakartaSans"
+                                  fontFamily: "PlusJakartaSans",
                                 ),
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
