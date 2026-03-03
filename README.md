@@ -23,6 +23,3 @@ Repository ini adalah ruang eksperimen dan pembelajaran saya dalam mendalami pen
 |-----------|-----------|
 | [Flutter](https://flutter.dev/) | UI Toolkit dari Google |
 | [Dart](https://dart.dev/) | Bahasa pemrograman |
-| [Provider](https://pub.dev/packages/provider) | State management |
-| [Dio](https://pub.dev/packages/dio) | HTTP client untuk API |
-| [Hive](https://pub.dev/packages/hive) | Local database |
