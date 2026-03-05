@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
         type: BottomNavigationBarType.fixed,
         selectedFontSize: 12,
         unselectedFontSize: 12,
-        selectedItemColor: const Color.fromARGB(255, 111, 50, 28),
+        selectedItemColor: Colors.blueAccent[400],
         unselectedItemColor: Colors.grey[600],
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
@@ -152,26 +152,50 @@ class HomePage extends StatelessWidget {
                                 bottom: 16.0,
                                 top: 4.0,
                               ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text(
-                                    "Identitas Budaya Sunda",
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: "PlusJakartaSans",
-                                    ),
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Identitas Budaya Sunda",
+                                        style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: "PlusJakartaSans",
+                                        ),
+                                      ),
+                                      SizedBox(height: 4),
+                                      Text(
+                                        "Bandung, Jawa Barat",
+                                        style: TextStyle(
+                                          fontSize: 12,
+                                          color: Colors.grey[600],
+                                          fontFamily: "PlusJakartaSans",
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(height: 4),
-                                  Text(
-                                    "Bandung, Jawa Barat",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: Colors.grey[600],
-                                      fontFamily: "PlusJakartaSans",
+                                  
+                                  // Button
+                                  TextButton(
+                                    style: TextButton.styleFrom(
+                                      backgroundColor: Colors.blueAccent[400],
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(16),
+                                      ),
                                     ),
-                                  ),
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Book Now",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 12,
+                                        fontFamily: "PlusJakartaSans",
+                                      ),
+                                    ),
+                                  )
                                 ],
                               ),
                             ),
