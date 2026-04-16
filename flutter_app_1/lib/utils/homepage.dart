@@ -1,3 +1,5 @@
+import "dart:io";
+
 import "package:flutter/material.dart";
 import "package:carousel_slider/carousel_slider.dart";
 
@@ -101,6 +103,98 @@ class HomePage extends StatelessWidget {
               ),
               // ICON LIST
 
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(35, 255, 139, 128),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: const Color.fromARGB(75, 255, 82, 82)!,
+                              width: 2,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.calendar_month,
+                            color: Colors.redAccent[200],
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text("Events"),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(35, 185, 246, 202),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: const Color.fromARGB(75, 105, 240, 175)!,
+                              width: 2,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.travel_explore,
+                            color: Colors.greenAccent[200],
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text("Wisata"),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(15, 253, 198, 87),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: const Color.fromARGB(138, 253, 198, 87)!,
+                              width: 2,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.shopping_bag,
+                            color: const Color.fromARGB(255, 255, 196, 74),
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text("Produk"),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.all(12),
+                          decoration: BoxDecoration(
+                            color: const Color.fromARGB(65, 189, 233, 255),
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                              color: const Color.fromARGB(50, 38, 118, 159)!,
+                              width: 2,
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.document_scanner,
+                            color: const Color.fromARGB(100, 38, 118, 159),
+                          ),
+                        ),
+                        SizedBox(height: 8),
+                        Text("Artikel"),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
               // TEXT JUDUL CARD LIST
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
