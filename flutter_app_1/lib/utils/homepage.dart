@@ -1,5 +1,3 @@
-import "dart:io";
-
 import "package:flutter/material.dart";
 import "package:carousel_slider/carousel_slider.dart";
 
@@ -116,7 +114,7 @@ class HomePage extends StatelessWidget {
                             color: const Color.fromARGB(35, 255, 139, 128),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: const Color.fromARGB(75, 255, 82, 82)!,
+                              color: const Color.fromARGB(75, 255, 82, 82),
                               width: 2,
                             ),
                           ),
@@ -137,7 +135,7 @@ class HomePage extends StatelessWidget {
                             color: const Color.fromARGB(35, 185, 246, 202),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: const Color.fromARGB(75, 105, 240, 175)!,
+                              color: const Color.fromARGB(75, 105, 240, 175),
                               width: 2,
                             ),
                           ),
@@ -158,7 +156,7 @@ class HomePage extends StatelessWidget {
                             color: const Color.fromARGB(15, 253, 198, 87),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: const Color.fromARGB(138, 253, 198, 87)!,
+                              color: const Color.fromARGB(138, 253, 198, 87),
                               width: 2,
                             ),
                           ),
@@ -179,7 +177,7 @@ class HomePage extends StatelessWidget {
                             color: const Color.fromARGB(65, 189, 233, 255),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
-                              color: const Color.fromARGB(50, 38, 118, 159)!,
+                              color: const Color.fromARGB(50, 38, 118, 159),
                               width: 2,
                             ),
                           ),
