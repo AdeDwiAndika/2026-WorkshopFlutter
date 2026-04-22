@@ -40,13 +40,26 @@ class DetailPage extends StatelessWidget {
               // NAMA TEMPAT WISATA
               Container(
                 padding: EdgeInsets.all(16.0),
-                child: Text(
-                  place.name,
-                  style: TextStyle(
-                    color: AppColors.textPrimary,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      place.name,
+                      style: TextStyle(
+                        color: AppColors.textPrimary,
+                        fontSize: 24.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      place.hargaTiket,
+                      style: TextStyle(
+                        color: AppColors.primary,
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               // ICON LOKASI DAN WAKTU BUKA
@@ -95,7 +108,7 @@ class DetailPage extends StatelessWidget {
                           ),
                           padding: EdgeInsets.all(8.0),
                           child: Icon(
-                            Icons.calendar_month,
+                            Icons.access_time,
                             color: AppColors.primary,
                             size: 16.0,
                           ),
@@ -104,6 +117,35 @@ class DetailPage extends StatelessWidget {
                         // TEXT
                         Text(
                           place.waktuBuka,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: AppColors.grey700,
+                            fontSize: 12.0,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Gap(8.0),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        // ICON
+                        Container(
+                          decoration: BoxDecoration(
+                            color: AppColors.primaryLight,
+                            borderRadius: BorderRadius.circular(4.0),
+                          ),
+                          padding: EdgeInsets.all(8.0),
+                          child: Icon(
+                            Icons.calendar_month,
+                            color: AppColors.primary,
+                            size: 16.0,
+                          ),
+                        ),
+                        Gap(8.0),
+                        // TEXT
+                        Text(
+                          place.hariBuka,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: AppColors.grey700,
